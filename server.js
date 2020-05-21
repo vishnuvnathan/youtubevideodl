@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.static('client/build'));
-app.get('/download', (req,res) => {
+app.get('/videourl', (req,res) => {
 var URL = req.query.URL;
 console.log(URL);
 var title="video.mp4";
@@ -22,8 +22,16 @@ ytdl.getInfo(URL, (err, info) => {
 //     }).pipe(res);
 });
 
+// app.get('/download',(req,res) => {
+//     let videoUrl = req.query.videourl;
+//     let videotitle= req.query.videotitle;
+//     res.header('Content-Disposition', `attachment; filename=${videotitle}`);
+//     // res
+// })
+
 app.get('/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    
 });
 
 

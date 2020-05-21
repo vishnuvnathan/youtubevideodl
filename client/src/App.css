@@ -19,7 +19,7 @@
 .details h2{
   font-size: 25px;
 }
-input{
+input[type="text"]{
   border: 2px solid grey;
   background-color: transparent;
   border-radius: 5px;
@@ -29,7 +29,7 @@ input{
   color: #ffffff;
   padding-left: 10px;
 }
-input:focus{
+input[type="text"]:focus{
   transition: .5s;
   border: 2px solid rgb(235, 218, 218);
   outline: none;
@@ -37,12 +37,13 @@ input:focus{
 }
 .container{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   flex-direction: column;
   width:100%;
   margin: 0 auto;
 }
-button{
+.submit-button{
   border: 2px solid grey;
   background-color: transparent;
   padding: 5px;
@@ -55,15 +56,19 @@ button{
   font-weight: bold;
 
 }
-button:hover{
+.submit-button:hover{
   
   color: rgb(255, 255, 255);
   transition: .5s;
   border: 2px solid #D9271D;
 }
-button:focus{
+.submit-button:focus{
   outline: none;
   transform: scale(.9);
+}
+form{
+  display: flex;
+  flex-direction: column;
 }
 .youtube{
   display: block;
@@ -71,6 +76,39 @@ button:focus{
   height: auto;
   margin: 0;
   margin: 10px;
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  max-height: 30vh;
+}
+.download-label-container{
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10%;
+
+}
+.download-label{
+  border: 2px solid rgb(202, 93, 74);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.type{
+margin-left: 10px;
+}
+.download{
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 2px;
+  text-decoration: none;
+  color: #ffffff;
 }
 @media screen and (min-width:768px){
   input{
